@@ -7,17 +7,20 @@ public class Superhumans extends Human {
     private String alias;
     private String ability;
     private String catchPhrase;
+    private String power;
 
-    public Superhumans(Integer id, String gender, String occupation, String name, LocalDate dob, String alias, String catchPhrase, String ability) {
-        super(id, gender, occupation, name, dob);
+    public Superhumans(String name, String gender, String occupation, LocalDate dob, Integer id, String alias, String catchPhrase, String ability) {
+        super(name, gender, occupation, dob, id);
         this.alias = alias;
         this.ability = ability;
         this.catchPhrase = catchPhrase;
     }
 
-    public enum affiliation {
-        GOOD,
-        BAD
+    public void setPower(String power){
+        this.power = power;
+    }
+    public String getPower(String catchPhrase){
+        return " ' "+catchPhrase+"'!"+ " "+ power;
     }
 
     public void setCatchPhrase(String s){

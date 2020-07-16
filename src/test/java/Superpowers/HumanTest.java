@@ -9,106 +9,29 @@ import java.time.LocalDate;
 public class HumanTest {
 
     @Test
-    public void setIdTest(){
-        // Given
-        Superhumans superhuman = new Superhumans();
+    public void constructorTest(){
+        String expectedName = "Andre Benjamin";
+        String expectedGender = "Male";
+        String expectedOccupation = "Janitor";
+        LocalDate expecteddob = LocalDate.of(2001,10,19);
+        Integer expectedid = 9801;
+        Integer expectedyear = 19;
 
-        // When
-        superhuman.setId(01);
-        Integer expected = 01;
-        Integer actual = superhuman.getId();
+        Human person = new Person(expectedName, expectedGender, expectedOccupation, expecteddob, expectedid);
+        person.setName(expectedName);
+        person.setGender(expectedGender);
+        person.setOccupation(expectedOccupation);
+        person.setDob(expecteddob);
+        person.setId(expectedid);
+        
+        Assert.assertEquals("Andre Benjamin", person.getName());
+        Assert.assertEquals("Male", person.getGender());
+        Assert.assertEquals("Janitor", person.getOccupation());
+        Assert.assertEquals(expecteddob,person.getDob());
+        Assert.assertEquals(expectedid, person.getId());
+        Assert.assertEquals(expectedyear, person.getAge());
+        //String expectedString = expectedName + " " + expectedGender + " " + expectedOccupation +" "+ expecteddob +" "+ expectedid;
 
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void getIdTest(){
-        // Given
-        Superhumans superhuman = new Superhumans();
-        // When
-        superhuman.setId(02);
-        Integer expected = 02;
-        Integer actual = superhuman.getId();
-
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void setGenderTest(){
-        // Given
-        Superhumans superhuman = new Superhumans();
-        // When
-        superhuman.setGender("Male");
-        String expected = "Male";
-        String actual = superhuman.getGender();
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void getGenderTest(){
-        // Given
-        Superhumans superhuman = new Superhumans();
-        // When
-        superhuman.setGender("Female");
-        String expected = "Female";
-        String actual = superhuman.getGender();
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void setOccupationTest(){
-        // Given
-        Superhumans superhuman = new Superhumans();
-
-        // When
-        superhuman.setOccupation("Janitor");
-        String expected = "Janitor";
-        String actual = superhuman.getOccupation();
-
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void getOccupationTest(){
-        // Given
-        Human superhuman = new Superhumans();
-
-        // When
-        superhuman.setOccupation("Software Engineer");
-        String expected = "Software Engineer";
-        String actual = superhuman.getOccupation();
-
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void setNameTest(){
-        // Given
-        Superhumans superhuman = new Superhumans();
-        // When
-        superhuman.setName("All Might");
-        String expected = "All Might";
-        String actual = superhuman.getName();
-        // Then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void getNameTest(){
-        // Given
-        Superhumans superhumans = new Superhumans();
-
-        // When
-        superhumans.setName("Lemillion");
-        String expected = "Lemillion";
-        String actual = superhumans.getName();
-        // Then
-        Assert.assertEquals(expected, actual);
+        //Assert.assertTrue(expectedString.equals(human.toString()));
     }
 }

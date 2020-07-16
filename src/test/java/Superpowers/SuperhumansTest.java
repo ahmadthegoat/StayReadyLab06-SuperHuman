@@ -20,7 +20,7 @@ public class SuperhumansTest {
         //Affliation goodOrBad = Affliation.good;
         LocalDate expectedDOB = LocalDate.of(1972,6,10);
         // When
-        Superhumans AllMight = new Superhumans(expectedId, expectedGender, expectedOccupation, expectedName, expectedDOB, expectedAlias, expectedAbility, expectedCatchPhrase);
+        Superhumans AllMight = new Superhumans(expectedName, expectedGender, expectedOccupation, expectedDOB, expectedId, expectedAlias, expectedCatchPhrase, expectedAbility);
         // getters
         String actualAlias = AllMight.getAlias();
         Assert.assertEquals(expectedAlias, actualAlias); // alias test
